@@ -8,4 +8,4 @@ from typing import List
 
 __all__: list[str] = []  # noqa: WPS410 (the only __variable__ we use)
 
-__version__ = "3.0.0"
+__version__ = "3.0.0-alpha2"

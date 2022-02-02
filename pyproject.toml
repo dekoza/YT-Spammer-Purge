@@ -11,13 +11,13 @@ profile = "black"
 
 [tool.poetry]
 name = "yt-spam-purge"
-version = "0.1.0"
+version = "3.0.0-alpha2"
 description = "Easily scan for and delete scam comments on your YouTube channel."
 authors = ["ThioJoe <joe@thiojoe.com>"]
 license = "GNU General Public License v3.0"
 readme = "README.md"
 repository = "https://github.com/dekoza/yt-spam-purge"
-homepage = "https://github.com/dekoza/yt-spam-purge"
+homepage = "https://github.com/ThioJoe/YT-Spammer-Purge"
 keywords = []
 packages = [ { include = "yt_spam_purge", from = "src" } ]
 
