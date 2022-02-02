@@ -1,17 +1,6 @@
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
-
-[tool.black]
-line-length = 100
-exclude = "tests/fixtures"
-
-[tool.isort]
-profile = "black"
-
 [tool.poetry]
 name = "yt-spam-purge"
-version = "3.0.0-alpha3"
+version = "0.0.0"  # placeholder, version resolved by plugin
 description = "Easily scan for and delete scam comments on your YouTube channel."
 authors = ["ThioJoe <joe@thiojoe.com>"]
 license = "GNU General Public License v3.0"
@@ -74,3 +63,17 @@ pre-commit = "^2.17.0"
 
 [tool.poetry.scripts]
 ytsp = "yt_spam_purge.cli:main"
+
+[tool.poetry-version-plugin]
+source = "init"
+
+[tool.black]
+line-length = 100
+exclude = "tests/fixtures"
+
+[tool.isort]
+profile = "black"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

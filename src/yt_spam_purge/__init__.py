@@ -3,9 +3,5 @@ yt-spam-purge package.
 
 Easily scan for and delete scam comments on your YouTube channel.
 """
-
-from typing import List
-
-__all__: list[str] = []  # noqa: WPS410 (the only __variable__ we use)
-
+__all__: list[str] = ["__version__"]
 __version__ = "3.0.0-alpha3"
