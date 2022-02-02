@@ -150,4 +150,3 @@ git push -f
 
 If this seems all too complicated, you can push or force-push each new commit,
 and we will squash them ourselves if needed, before merging.
-

@@ -22,7 +22,7 @@ WINDOWS = os.name == "nt"
 PTY = not WINDOWS and not CI
 
 
-def latest(lines: List[str], regex: Pattern) -> Optional[str]:
+def latest(lines: list[str], regex: Pattern) -> str | None:
     """
     Return the last released version.
 
@@ -40,7 +40,7 @@ def latest(lines: List[str], regex: Pattern) -> Optional[str]:
     return None
 
 
-def unreleased(versions: List[Version], last_release: str) -> List[Version]:
+def unreleased(versions: list[Version], last_release: str) -> list[Version]:
     """
     Return the most recent versions down to latest release.
 
@@ -57,7 +57,7 @@ def unreleased(versions: List[Version], last_release: str) -> List[Version]:
     return versions
 
 
-def read_changelog(filepath: str) -> List[str]:
+def read_changelog(filepath: str) -> list[str]:
     """
     Read the changelog file.
 
@@ -67,11 +67,11 @@ def read_changelog(filepath: str) -> List[str]:
     Returns:
         The changelog lines.
     """
-    with open(filepath, "r") as changelog_file:
+    with open(filepath) as changelog_file:
         return changelog_file.read().splitlines()
 
 
-def write_changelog(filepath: str, lines: List[str]) -> None:
+def write_changelog(filepath: str, lines: list[str]) -> None:
     """
     Write the changelog file.
 
@@ -314,9 +314,17 @@ def release(ctx, version):
         ctx: The context instance (passed automatically).
         version: The new version number to use.
     """
-    ctx.run(f"poetry version {version}", title=f"Bumping version in pyproject.toml to {version}", pty=PTY)
+    ctx.run(
+        f"poetry version {version}",
+        title=f"Bumping version in pyproject.toml to {version}",
+        pty=PTY,
+    )
     ctx.run("git add pyproject.toml CHANGELOG.md", title="Staging files", pty=PTY)
-    ctx.run(["git", "commit", "-m", f"chore: Prepare release {version}"], title="Committing changes", pty=PTY)
+    ctx.run(
+        ["git", "commit", "-m", f"chore: Prepare release {version}"],
+        title="Committing changes",
+        pty=PTY,
+    )
     ctx.run(f"git tag {version}", title="Tagging commit", pty=PTY)
     if not TESTING:
         ctx.run("git push", title="Pushing commits", pty=False)

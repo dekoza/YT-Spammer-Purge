@@ -46,7 +46,7 @@ YouTube offers a functionality to ban a user, but it does NOT delete previous co
 
 ## 🤔 Pro-Tip If This Seems Sketchy: Limiting The App's Access 🤔
 
-If you feel sketched out about giving the app the required high level permissions to your channel (very understandable), you could instead use the app in 'moderator mode' (set in the config file). First, some context: When you grant access to another channel to be a moderator for your channel, they are able to mark comments for 'held for review', and this permission works through the API as well. 
+If you feel sketched out about giving the app the required high level permissions to your channel (very understandable), you could instead use the app in 'moderator mode' (set in the config file). First, some context: When you grant access to another channel to be a moderator for your channel, they are able to mark comments for 'held for review', and this permission works through the API as well.
 
 _Therefore,_ what you could do is create an _blank dummy-google-account_ with nothing on it except a empty new channel. Then you can grant _that_ channel permission to be a moderator, and use the app through _the dummy moderator account_. **This way, you know that the app will never have the ability to do more than mark comments as held for review** (which the app supports) on your main channel, and have no other access to your account's data. You just won't be able to ban the spammers through this app directly, but you can still remove/hide their comments instead of deleting them. Just make sure to create the google cloud API project on the dummy account instead.
 
@@ -114,6 +114,6 @@ Now you can run `docker-compose up` to start the container, or use the image to 
 
 
 ## Instructions - Obtaining YouTube API Key
-To use this script, you will need an "Oauth2" credential to access the scanning and deletion functions via YouTube's Data API. Otherwise this script won't work at all. 
+To use this script, you will need an "Oauth2" credential to access the scanning and deletion functions via YouTube's Data API. Otherwise this script won't work at all.
 * #### Instructions can be found on this page: [Instructions: Obtaining an API Key](https://github.com/ThioJoe/YT-Spammer-Purge/wiki/Instructions:-Obtaining-an-API-Key)
-* #### **Or, follow a video WalkThrough Here: <https://www.youtube.com/watch?v=c6ebWvay8dE>**  
+* #### **Or, follow a video WalkThrough Here: <https://www.youtube.com/watch?v=c6ebWvay8dE>**

@@ -1,9 +1,9 @@
-site_name: "yt-spam-purge"
-site_description: "Easily scan for and delete scam comments on your YouTube channel."
-site_url: "https://dekoza.github.io/yt-spam-purge"
-repo_url: "https://github.com/dekoza/yt-spam-purge"
-repo_name: "dekoza/yt-spam-purge"
-site_dir: "site"
+site_name: yt-spam-purge
+site_description: Easily scan for and delete scam comments on your YouTube channel.
+site_url: https://dekoza.github.io/yt-spam-purge
+repo_url: https://github.com/dekoza/yt-spam-purge
+repo_name: dekoza/yt-spam-purge
+site_dir: site
 
 nav:
 - Home:
