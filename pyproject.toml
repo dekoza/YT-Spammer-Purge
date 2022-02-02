@@ -11,7 +11,7 @@ profile = "black"
 
 [tool.poetry]
 name = "yt-spam-purge"
-version = "3.0.0-alpha2"
+version = "3.0.0-alpha3"
 description = "Easily scan for and delete scam comments on your YouTube channel."
 authors = ["ThioJoe <joe@thiojoe.com>"]
 license = "GNU General Public License v3.0"
