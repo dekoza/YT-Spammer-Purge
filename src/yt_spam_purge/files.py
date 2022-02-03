@@ -474,9 +474,7 @@ def load_config_file(
     def default_config_path(relative_path):
         if hasattr(sys, "_MEIPASS"):  # If running as a pyinstaller bundle
             return os.path.join(sys._MEIPASS, relative_path)
-        return os.path.join(
-            os.path.abspath("assets"), relative_path
-        )  # If running as script, specifies resource folder as /assets
+        return os.path.join(pathlib.Path(os.path.abspath(__file__)).parent, "assets", relative_path)  # If running as script, specifies resource folder as /assets
 
     # If user config file exists, keep path. Otherwise use default config file path
     if os.path.exists(configFileName) and forceDefault == False:
@@ -779,7 +777,7 @@ def ingest_asset_file(fileName):
         if hasattr(sys, "_MEIPASS"):  # If running as a pyinstaller bundle
             return os.path.join(sys._MEIPASS, relative_path)
         return os.path.join(
-            os.path.abspath("assets"), relative_path
+            pathlib.Path(os.path.abspath(__file__)).parent, "assets", relative_path
         )  # If running as script, specifies resource folder as /assets
 
     # Open list of root zone domain extensions
@@ -798,7 +796,7 @@ def copy_asset_file(fileName, destination):
         if hasattr(sys, "_MEIPASS"):  # If running as a pyinstaller bundle
             return os.path.join(sys._MEIPASS, relative_path)
         return os.path.join(
-            os.path.abspath("assets"), relative_path
+            pathlib.Path(os.path.abspath(__file__)).parent, "assets", relative_path
         )  # If running as script, specifies resource folder as /assets
 
     copyfile(assetFilesPath(fileName), os.path.abspath(destination))
@@ -852,7 +850,7 @@ def create_config_file(updating=False, dontWarn=False, configFileName="SpamPurge
         if hasattr(sys, "_MEIPASS"):  # If running as a pyinstaller bundle
             return os.path.join(sys._MEIPASS, relative_path)
         return os.path.join(
-            os.path.abspath("assets"), relative_path
+            pathlib.Path(os.path.abspath(__file__)).parent, "assets", relative_path
         )  # If running as script, specifies resource folder as /assets
 
     if os.path.exists(configFileName):
