@@ -110,4 +110,3 @@ python3.10 -m pip install --user pipx
 
 pipx install --python python3.10 yt-spam-purge
 ```
-

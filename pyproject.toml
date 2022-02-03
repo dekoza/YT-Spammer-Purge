@@ -1,3 +1,14 @@
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 100
+exclude = "tests/fixtures"
+
+[tool.isort]
+profile = "black"
+
 [tool.poetry]
 name = "yt-spam-purge"
 version = "0.0.0"  # placeholder, version resolved by plugin
@@ -66,14 +77,3 @@ ytsp = "yt_spam_purge.cli:main"
 
 [tool.poetry-version-plugin]
 source = "init"
-
-[tool.black]
-line-length = 100
-exclude = "tests/fixtures"
-
-[tool.isort]
-profile = "black"
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"

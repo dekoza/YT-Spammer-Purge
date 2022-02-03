@@ -41,7 +41,7 @@ def initialize():
 # Authorize the request and store authorization credentials.
 def get_authenticated_service():
     global YOUTUBE
-    CLIENT_SECRETS_FILE = Path(os.path.abspath(__file__)).parent / 'client_secrets.json'
+    CLIENT_SECRETS_FILE = Path(__file__).parent / "client_secrets.json"
     YOUTUBE_READ_WRITE_SSL_SCOPE = ["https://www.googleapis.com/auth/youtube.force-ssl"]
     API_SERVICE_NAME = "youtube"
     API_VERSION = "v3"
